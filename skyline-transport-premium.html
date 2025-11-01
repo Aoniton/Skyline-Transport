@@ -1,0 +1,1829 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Skyline Transport - Profesionalni prijevoz robe i selidbe diljem EU. Osiguran teret, direktna vožnja, dostupni 24/7. Samo 0.90€/km!">
+    <meta name="keywords" content="prijevoz robe, selidbe, transport EU, kombi prijevoz, hitna dostava">
+    <title>Skyline Transport - Brz i Pouzdan Prijevoz | 0.90€/km</title>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="Logo.jpg">
+    
+    <style>
+        /* Modern CSS Reset & Variables */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Color Palette */
+            --primary-blue: #4A8AB5;
+            --accent-blue: #5BA3D0;
+            --dark-blue: #2C5F7F;
+            --deep-navy: #1A2332;
+            --charcoal: #2C3E50;
+            --gold: #FFD700;
+            --gold-hover: #FFC400;
+            --white: #FFFFFF;
+            --off-white: #FAFAFA;
+            --light-gray: #F5F7FA;
+            --medium-gray: #E0E4E8;
+            --text-gray: #4A5568;
+            --success-green: #10B981;
+            
+            /* Typography */
+            --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            --font-secondary: 'Georgia', serif;
+            
+            /* Spacing */
+            --container-max: 1200px;
+            --section-padding: 80px 20px;
+            --element-radius: 12px;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+            --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.2);
+            
+            /* Transitions */
+            --transition-fast: 0.2s ease;
+            --transition-base: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.7;
+            color: var(--text-gray);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-base);
+        }
+
+        .header.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 55px;
+            width: auto;
+            transition: var(--transition-base);
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--charcoal);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            letter-spacing: 0.3px;
+            position: relative;
+            transition: var(--transition-fast);
+            padding: 8px 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-blue);
+            transition: var(--transition-base);
+        }
+
+        .nav-link:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .cta-header {
+            background: var(--gold);
+            color: var(--charcoal);
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition-base);
+            box-shadow: var(--shadow-sm);
+            white-space: nowrap;
+        }
+
+        .cta-header:hover {
+            background: var(--gold-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .hamburger {
+            width: 28px;
+            height: 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background: var(--charcoal);
+            border-radius: 2px;
+            transition: var(--transition-base);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(26, 35, 50, 0.95), rgba(44, 95, 127, 0.9));
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%234A8AB5" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,128C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .hero-container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content {
+            color: var(--white);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .badge-icon {
+            width: 20px;
+            height: 20px;
+            background: var(--success-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 3.75rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--white);
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-title .highlight {
+            color: var(--gold);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.125rem, 2vw, 1.375rem);
+            line-height: 1.6;
+            margin-bottom: 32px;
+            opacity: 0.95;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 40px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--element-radius);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all var(--transition-base);
+            cursor: pointer;
+            border: none;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--charcoal);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-hover);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-image-section {
+            position: relative;
+        }
+
+        .hero-card {
+            position: relative;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .price-card {
+            text-align: center;
+        }
+
+        .price-label {
+            font-size: 14px;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .price-value {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .price-unit {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            margin-bottom: 24px;
+        }
+
+        .price-features {
+            text-align: left;
+            margin-top: 24px;
+        }
+
+        .price-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .price-feature:last-child {
+            border-bottom: none;
+        }
+
+        .check-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--success-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            flex-shrink: 0;
+            font-size: 14px;
+        }
+
+        /* Container & Section Styling */
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: var(--section-padding);
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: var(--light-gray);
+            color: var(--primary-blue);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            color: var(--charcoal);
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .section-description {
+            font-size: 1.125rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--element-radius);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-base);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
+            transform: scaleX(0);
+            transition: var(--transition-base);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-blue);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 12px;
+        }
+
+        .service-description {
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Why Choose Us */
+        .features-section {
+            background: var(--light-gray);
+            padding: var(--section-padding);
+            position: relative;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: var(--element-radius);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-base);
+        }
+
+        .feature-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-hover));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 12px;
+        }
+
+        .feature-description {
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* Vehicle Showcase */
+        .vehicle-showcase {
+            background: var(--white);
+        }
+
+        .vehicle-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .vehicle-images {
+            position: relative;
+        }
+
+        .vehicle-image-main {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow-xl);
+            object-fit: cover;
+        }
+
+        .vehicle-image-badge {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            background: var(--white);
+            padding: 20px 24px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .badge-title {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 4px;
+        }
+
+        .badge-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .vehicle-specs {
+            background: var(--white);
+        }
+
+        .specs-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            margin-bottom: 12px;
+        }
+
+        .specs-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-gray);
+            margin-bottom: 32px;
+        }
+
+        .specs-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: var(--light-gray);
+            border-radius: 12px;
+            transition: var(--transition-base);
+        }
+
+        .spec-item:hover {
+            background: var(--medium-gray);
+            transform: translateX(8px);
+        }
+
+        .spec-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-blue);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .spec-content {
+            flex: 1;
+        }
+
+        .spec-label {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 4px;
+        }
+
+        .spec-value {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        /* Quote Calculator */
+        .quote-section {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            padding: var(--section-padding);
+        }
+
+        .quote-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quote-card {
+            background: var(--white);
+            padding: 48px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .quote-form {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--charcoal);
+            font-size: 15px;
+        }
+
+        .form-input {
+            padding: 16px 20px;
+            border: 2px solid var(--medium-gray);
+            border-radius: 12px;
+            font-size: 16px;
+            transition: var(--transition-base);
+            font-family: inherit;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(74, 138, 181, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .estimate-result {
+            background: var(--light-gray);
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 24px;
+            display: none;
+        }
+
+        .estimate-result.active {
+            display: block;
+        }
+
+        .estimate-label {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 8px;
+        }
+
+        .estimate-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 16px;
+        }
+
+        .estimate-note {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            background: var(--off-white);
+            padding: var(--section-padding);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 36px;
+            border-radius: var(--element-radius);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+
+        .quote-mark {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--primary-blue);
+            opacity: 0.1;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-text {
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            color: var(--text-gray);
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        .author-info {
+            flex: 1;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 4px;
+        }
+
+        .author-role {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .rating {
+            color: var(--gold);
+            font-size: 18px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--charcoal);
+            color: var(--white);
+            padding: var(--section-padding);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .contact-icon-wrapper {
+            width: 56px;
+            height: 56px;
+            background: var(--primary-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+
+        .contact-details {
+            flex: 1;
+        }
+
+        .contact-label {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 8px;
+        }
+
+        .contact-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .contact-value a {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition-base);
+        }
+
+        .contact-value a:hover {
+            color: var(--gold);
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-form .form-input,
+        .contact-form textarea {
+            color: var(--charcoal);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--deep-navy);
+            color: var(--white);
+            padding: 60px 24px 24px;
+        }
+
+        .footer-content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .footer-description {
+            opacity: 0.8;
+            line-height: 1.7;
+        }
+
+        .footer-section h4 {
+            font-size: 1.125rem;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: var(--transition-fast);
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--gold);
+            transform: translateX(4px);
+        }
+
+        .footer-bottom {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        /* Sticky Contact Bar */
+        .sticky-contact {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+            display: flex;
+            gap: 12px;
+        }
+
+        .sticky-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition-base);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .sticky-btn-phone {
+            background: var(--success-green);
+            color: var(--white);
+        }
+
+        .sticky-btn-email {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .sticky-btn:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-cta-group {
+                justify-content: center;
+            }
+
+            .vehicle-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 24px;
+                box-shadow: var(--shadow-lg);
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: var(--transition-base);
+                pointer-events: none;
+            }
+
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero-title {
+                font-size: 2.25rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sticky-contact {
+                bottom: 16px;
+                right: 16px;
+            }
+
+            .container {
+                padding: 60px 20px;
+            }
+        }
+
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .mb-16 { margin-bottom: 16px; }
+        .mb-24 { margin-bottom: 24px; }
+        .mb-32 { margin-bottom: 32px; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <a href="#pocetna" class="logo-section">
+                <img src="Logo.jpg" alt="Skyline Transport Logo" class="logo-img">
+            </a>
+            
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#pocetna" class="nav-link">Početna</a></li>
+                    <li><a href="#usluge" class="nav-link">Usluge</a></li>
+                    <li><a href="#vozilo" class="nav-link">Vozilo</a></li>
+                    <li><a href="#o-nama" class="nav-link">O Nama</a></li>
+                    <li><a href="#kontakt" class="cta-header">Kontakt</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="pocetna">
+        <div class="hero-container">
+            <div class="hero-content fade-in-up">
+                <div class="hero-badge">
+                    <span class="badge-icon">✓</span>
+                    Dostupni 24/7 - Cijela EU
+                </div>
+                
+                <h1 class="hero-title">
+                    Brz i Pouzdan<br>
+                    <span class="highlight">Transport Diljem Europe</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Profesionalni prijevoz robe i selidbe s osiguranim teretom. Direktna vožnja bez prepakiranja. Vaš partner za sigurnu i brzу dostavu.
+                </p>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">24-48h</span>
+                        <span class="stat-label">Dostava EU</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Osiguran Teret</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1.3t</span>
+                        <span class="stat-label">Nosivost</span>
+                    </div>
+                </div>
+
+                <div class="hero-cta-group">
+                    <a href="#ponuda" class="btn btn-primary">
+                        💬 Zatraži Ponudu
+                    </a>
+                    <a href="tel:+385953763759" class="btn btn-secondary">
+                        📞 +385 95 376 3759
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-image-section fade-in-up">
+                <div class="hero-card price-card">
+                    <div class="price-label">Naša Cijena</div>
+                    <div class="price-value">0.90€</div>
+                    <div class="price-unit">po kilometru</div>
+                    
+                    <div class="price-features">
+                        <div class="price-feature">
+                            <span class="check-icon">✓</span>
+                            <span>Teret osiguran u cijeni</span>
+                        </div>
+                        <div class="price-feature">
+                            <span class="check-icon">✓</span>
+                            <span>Direktna vožnja bez zaustavljanja</span>
+                        </div>
+                        <div class="price-feature">
+                            <span class="check-icon">✓</span>
+                            <span>Bez skrivenih troškova</span>
+                        </div>
+                        <div class="price-feature">
+                            <span class="check-icon">✓</span>
+                            <span>Dostupni vikendom i praznicima</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#ponuda" class="btn btn-primary" style="width: 100%; margin-top: 24px;">
+                        Zatraži Besplatnu Ponudu
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="usluge">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Što Nudimo</span>
+                <h2 class="section-title">Naše Usluge</h2>
+                <p class="section-description">
+                    Pružamo sveobuhvatne transportne usluge prilagođene vašim potrebama. Od selidbi do hitnih dostava, tu smo za vas.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3 class="service-title">Selidbe</h3>
+                    <p class="service-description">
+                        Profesionalne selidbe stanova, kuća i ureda. Brižljivo rukovanje vašim namještajem i imovinom s potpunom sigurnošću.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🛋️</div>
+                    <h3 class="service-title">Namještaj & Bijela Tehnika</h3>
+                    <p class="service-description">
+                        Siguran transport namještaja, kućanskih aparata i bijele tehnike. Stručno pakiranje i zaštita tijekom prijevoza.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🧱</div>
+                    <h3 class="service-title">Građevinski Materijal</h3>
+                    <p class="service-description">
+                        Prijevoz građevinskog materijala za vaše projekte. Paleti, cement, opeka - sve što vam je potrebno.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h3 class="service-title">Paletirana & Rasuta Roba</h3>
+                    <p class="service-description">
+                        Transport svih vrsta robe - paletirana ili rasuta. Osiguran teret tijekom cijelog putovanja.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3 class="service-title">Ekspresne Dostave 24h</h3>
+                    <p class="service-description">
+                        Hitne dostave kada vam vrijeme je najvažnije. Dostupni 0-24h za najhitnije transportne potrebe.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🇪🇺</div>
+                    <h3 class="service-title">Prijevoz Diljem EU</h3>
+                    <p class="service-description">
+                        Pokrivamo sve države Europske Unije. Jedan poziv - cijela Europa dostupna za vaš transport.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="o-nama">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Zašto Mi</span>
+                <h2 class="section-title">Zašto Odabrati Skyline Transport?</h2>
+                <p class="section-description">
+                    Naša predanost kvaliteti, brzini i sigurnosti čini nas idealnim partnerom za vaše transportne potrebe.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">Brzo & Pouzdano</h3>
+                    <p class="feature-description">
+                        Direktna vožnja bez prepakiranja i dugog čekanja. Mercedes Sprinter spremni za put u najkraćem roku.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3 class="feature-title">Potpuno Osigurano</h3>
+                    <p class="feature-description">
+                        Vaš teret je osiguran tijekom cijelog putovanja. Bez dodatnih troškova - osiguranje uključeno u cijenu.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3 class="feature-title">Transparentne Cijene</h3>
+                    <p class="feature-description">
+                        Jasna cijena od 0.90€/km bez skrivenih troškova. Znate točno što plaćate prije nego krenemo.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📞</div>
+                    <h3 class="feature-title">Dostupni 24/7</h3>
+                    <p class="feature-description">
+                        Radimo vikendom i praznicima. Bez obzira na dan i vrijeme, spremni smo za vaš transport.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">Direktna Vožnja</h3>
+                    <p class="feature-description">
+                        Bez zaustavljanja na putu. Vaš teret ide direktno od točke A do točke B bez transfera.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3 class="feature-title">Profesionalna Usluga</h3>
+                    <p class="feature-description">
+                        Iskusni vozači, uredna vozila i briga o svakom detalju. Vaš teret je naša odgovornost.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vehicle Showcase -->
+    <section class="vehicle-showcase section" id="vozilo">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Naše Vozilo</span>
+                <h2 class="section-title">Mercedes Sprinter 213 CDI</h2>
+                <p class="section-description">
+                    Suvremeno i odlično održavano vozilo spremno za sve vaše transportne potrebe.
+                </p>
+            </div>
+
+            <div class="vehicle-content">
+                <div class="vehicle-images">
+                    <img src="van_1.jpg" alt="Mercedes Sprinter" class="vehicle-image-main">
+                    <div class="vehicle-image-badge">
+                        <div class="badge-title">Nosivost</div>
+                        <div class="badge-value">1.3t</div>
+                    </div>
+                </div>
+
+                <div class="vehicle-specs">
+                    <h3 class="specs-title">Tehnički Podaci</h3>
+                    <p class="specs-subtitle">Provjereno vozilo s redovitim servisom i održavanjem</p>
+
+                    <div class="specs-list">
+                        <div class="spec-item">
+                            <div class="spec-icon">📏</div>
+                            <div class="spec-content">
+                                <div class="spec-label">Dužina tovarnog prostora</div>
+                                <div class="spec-value">3,3 metra</div>
+                            </div>
+                        </div>
+
+                        <div class="spec-item">
+                            <div class="spec-icon">↔️</div>
+                            <div class="spec-content">
+                                <div class="spec-label">Širina tovarnog prostora</div>
+                                <div class="spec-value">1,78 metra</div>
+                            </div>
+                        </div>
+
+                        <div class="spec-item">
+                            <div class="spec-icon">↕️</div>
+                            <div class="spec-content">
+                                <div class="spec-label">Visina tovarnog prostora</div>
+                                <div class="spec-value">1,94 metra</div>
+                            </div>
+                        </div>
+
+                        <div class="spec-item">
+                            <div class="spec-icon">⚖️</div>
+                            <div class="spec-content">
+                                <div class="spec-label">Maksimalna nosivost</div>
+                                <div class="spec-value">Do 1,3 tone</div>
+                            </div>
+                        </div>
+
+                        <div class="spec-item">
+                            <div class="spec-icon">✅</div>
+                            <div class="spec-content">
+                                <div class="spec-label">Stanje vozila</div>
+                                <div class="spec-value">Odlično održavano</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Calculator -->
+    <section class="quote-section" id="ponuda">
+        <div class="quote-container">
+            <div class="section-header">
+                <h2 class="section-title" style="color: var(--white);">Izračunajte Vašu Cijenu</h2>
+                <p class="section-description" style="color: rgba(255,255,255,0.9);">
+                    Unesite detalje vašeg transporta i dobijte trenutnu procjenu cijene
+                </p>
+            </div>
+
+            <div class="quote-card">
+                <form class="quote-form" id="quoteForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Polazište</label>
+                            <input type="text" class="form-input" placeholder="Grad polaska" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Odredište</label>
+                            <input type="text" class="form-input" placeholder="Grad dolaska" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Udaljenost (km)</label>
+                        <input type="number" class="form-input" id="distance" placeholder="Npr. 500" min="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Vrsta tereta</label>
+                        <select class="form-input">
+                            <option>Selidba</option>
+                            <option>Namještaj</option>
+                            <option>Građevinski materijal</option>
+                            <option>Paletirana roba</option>
+                            <option>Ostalo</option>
+                        </select>
+                    </div>
+
+                    <button type="button" class="btn btn-primary" style="width: 100%;" onclick="calculatePrice()">
+                        🧮 Izračunaj Cijenu
+                    </button>
+
+                    <div class="estimate-result" id="estimateResult">
+                        <div class="estimate-label">Procijenjena Cijena</div>
+                        <div class="estimate-price" id="estimatedPrice">0€</div>
+                        <div class="estimate-note">*Finalna cijena ovisi o dodatnim uslugama i vrsti tereta</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Mišljenja</span>
+                <h2 class="section-title">Što Kažu Naši Klijenti</h2>
+                <p class="section-description">
+                    Zadovoljstvo naših klijenata je naš najbolji pokazatelj kvalitete
+                </p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-mark">"</div>
+                    <p class="testimonial-text">
+                        Odličan servis! Brzo su reagirali na moj upit, cijena je bila fer, a selidba je prošla bez ikakvih problema. Definitivno preporučujem!
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MK</div>
+                        <div class="author-info">
+                            <div class="author-name">Marko Kovačević</div>
+                            <div class="author-role">Selidba Stan - Zagreb</div>
+                        </div>
+                        <div class="rating">★★★★★</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-mark">"</div>
+                    <p class="testimonial-text">
+                        Trebao sam hitno prevesti građevinski materijal iz Njemačke. Skyline je odradio sve brzo i profesionalno. Teret stigao netaknut i na vrijeme.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">IP</div>
+                        <div class="author-info">
+                            <div class="author-name">Ivan Perić</div>
+                            <div class="author-role">Transport Materijala - Split</div>
+                        </div>
+                        <div class="rating">★★★★★</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-mark">"</div>
+                    <p class="testimonial-text">
+                        Koristim njihove usluge redovito za poslovni transport. Uvijek pouzdani, cijene konkurentne, komunikacija odlična. Top ekipa!
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AJ</div>
+                        <div class="author-info">
+                            <div class="author-name">Ana Jurić</div>
+                            <div class="author-role">Poslovni Klijent - Rijeka</div>
+                        </div>
+                        <div class="rating">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="kontakt">
+        <div class="container">
+            <div class="contact-grid">
+                <div>
+                    <div class="section-header" style="text-align: left;">
+                        <span class="section-badge" style="background: rgba(255,255,255,0.15); color: var(--white);">Kontakt</span>
+                        <h2 class="section-title" style="color: var(--white);">Rezervirajte Svoj Transport</h2>
+                        <p class="section-description" style="color: rgba(255,255,255,0.9);">
+                            Kontaktirajte nas putem telefona ili emaila za brzu ponudu. Odgovaramo u roku od 15 minuta!
+                        </p>
+                    </div>
+
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon-wrapper">📱</div>
+                            <div class="contact-details">
+                                <div class="contact-label">Nazovite nas</div>
+                                <div class="contact-value">
+                                    <a href="tel:+385953763759">+385 95 376 3759</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon-wrapper">✉️</div>
+                            <div class="contact-details">
+                                <div class="contact-label">Email</div>
+                                <div class="contact-value">
+                                    <a href="mailto:davidkozar01@gmail.com">davidkozar01@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon-wrapper">🕒</div>
+                            <div class="contact-details">
+                                <div class="contact-label">Radno vrijeme</div>
+                                <div class="contact-value" style="font-size: 1.125rem;">24/7 Dostupni</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3 class="form-label mb-24" style="font-size: 1.5rem;">Pošaljite Upit</h3>
+                    <form class="quote-form">
+                        <div class="form-group">
+                            <label class="form-label">Vaše Ime</label>
+                            <input type="text" class="form-input" placeholder="Ime i prezime" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Telefon</label>
+                            <input type="tel" class="form-input" placeholder="+385 ..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-input" placeholder="vas@email.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Poruka</label>
+                            <textarea class="form-input" placeholder="Opišite vašu transportnu potrebu..." rows="4"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            📨 Pošalji Upit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="Logo.jpg" alt="Skyline Transport" class="footer-logo">
+                <p class="footer-description">
+                    Profesionalni prijevoz robe i selidbe diljem Europe. Brzo, sigurno i povoljno - vaš pouzdani partner za sve transportne potrebe.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Brze Veze</h4>
+                <ul class="footer-links">
+                    <li><a href="#pocetna">Početna</a></li>
+                    <li><a href="#usluge">Usluge</a></li>
+                    <li><a href="#vozilo">Vozilo</a></li>
+                    <li><a href="#o-nama">O Nama</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Usluge</h4>
+                <ul class="footer-links">
+                    <li><a href="#usluge">Selidbe</a></li>
+                    <li><a href="#usluge">Prijevoz Namještaja</a></li>
+                    <li><a href="#usluge">Građevinski Materijal</a></li>
+                    <li><a href="#usluge">Ekspresna Dostava</a></li>
+                    <li><a href="#usluge">Prijevoz Diljem EU</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Skyline Transport. Sva prava pridržana. | Tvoj teret = Naša briga!</p>
+        </div>
+    </footer>
+
+    <!-- Sticky Contact Buttons -->
+    <div class="sticky-contact">
+        <a href="tel:+385953763759" class="sticky-btn sticky-btn-phone" title="Nazovi">
+            📞
+        </a>
+        <a href="mailto:davidkozar01@gmail.com" class="sticky-btn sticky-btn-email" title="Email">
+            ✉️
+        </a>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Price Calculator
+        function calculatePrice() {
+            const distance = document.getElementById('distance').value;
+            const resultDiv = document.getElementById('estimateResult');
+            const priceDiv = document.getElementById('estimatedPrice');
+
+            if (distance && distance > 0) {
+                const price = (distance * 0.90).toFixed(2);
+                priceDiv.textContent = price + '€';
+                resultDiv.classList.add('active');
+                
+                // Smooth scroll to result
+                resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } else {
+                alert('Molimo unesite validnu udaljenost u kilometrima.');
+            }
+        }
+
+        // Form submission handling
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Hvala na upitu! Kontaktirat ćemo vas u najkraćem mogućem roku.');
+                form.reset();
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.service-card, .feature-card, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Active navigation highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 100;
+                const sectionId = section.getAttribute('id');
+                const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+
+                if (navLink && scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.style.color = '';
+                    });
+                    navLink.style.color = 'var(--primary-blue)';
+                }
+            });
+        });
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Distance input enhancement
+        const distanceInput = document.getElementById('distance');
+        if (distanceInput) {
+            distanceInput.addEventListener('input', (e) => {
+                const value = e.target.value;
+                if (value) {
+                    const estimated = (value * 0.90).toFixed(2);
+                    e.target.setAttribute('title', `Procijenjena cijena: ${estimated}€`);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
