@@ -106,6 +106,7 @@
             height: 55px;
             width: auto;
             transition: var(--transition-base);
+            border-radius: 8px;
         }
 
         .logo-img:hover {
@@ -965,6 +966,9 @@
         .footer-logo {
             height: 50px;
             width: auto;
+            max-width: 200px;
+            object-fit: contain;
+            border-radius: 8px;
         }
 
         .footer-description {
@@ -1676,7 +1680,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2024 Skyline Transport. Sva prava pridržana. | Tvoj teret = Naša briga!</p>
+            <p>&copy; <span id="currentYear">2025</span> Skyline Transport. Sva prava pridržana. | Tvoj teret = Naša briga!</p>
         </div>
     </footer>
 
@@ -1824,6 +1828,10 @@
                 }
             });
         }
+        // Auto-update year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
     </script>
+  
 </body>
 </html>
