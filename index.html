@@ -68,6 +68,18 @@
             overflow-x: hidden;
         }
 
+        /* Hide scrollbar on mobile for full-screen experience */
+        @media (max-width: 768px) {
+            body::-webkit-scrollbar {
+                display: none;
+            }
+
+            body {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
+
         /* Header & Navigation */
         .header {
             position: fixed;
@@ -970,6 +982,7 @@
             object-fit: contain;
             object-position: left center;
             border-radius: 8px;
+            display: block;
         }
 
         .footer-description {
@@ -1142,7 +1155,7 @@
             }
 
             .sticky-contact {
-                bottom: 16px;
+                bottom: 80px;
                 right: 16px;
             }
 
@@ -1711,13 +1724,18 @@
             });
         });
 
-        // Header scroll effect
+        // Header scroll effect and close mobile menu on scroll
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
+            }
+
+            // Close mobile menu when user scrolls
+            if (navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
             }
         });
 
