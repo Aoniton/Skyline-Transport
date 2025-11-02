@@ -1,0 +1,17 @@
+[build]
+  # No build command needed - this is a static HTML site
+  command = "echo 'Static site - no build required'"
+
+  # Publish the root directory (where index.html is located)
+  publish = "."
+
+# Redirect all routes to index.html for proper routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Set build image to modern Ubuntu version
+[build.environment]
+  # Use Node 18 LTS (recommended for compatibility)
+  NODE_VERSION = "18"
