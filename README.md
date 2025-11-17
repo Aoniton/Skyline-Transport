@@ -1,4 +1,4 @@
-🚀 **Skyline Transport - Premium Website**
+🚀 **Transportna Firma - Premium Website**
 Professional transportation and logistics website for EU-wide delivery services.
 Show Image
 Show Image
@@ -7,7 +7,7 @@ Show Image
 Visit: https://aoniton.github.io/Skyline-Transport/
 
 📖 About
-Skyline Transport is a Croatian-based transportation company offering:
+Transportna Firma is a Croatian-based transportation company offering:
 
 🏠 Moving services (apartments, houses, offices)
 🛋️ Furniture & appliance transport
@@ -57,7 +57,7 @@ Incorporates industry best practices for conversion optimization and user experi
 📂 Project Structure
 Skyline-Transport/
 ├── index.html              # Main website file
-├── Logo.jpg               # Company logo
+├── transportna-firma-logo.png               # Company logo
 ├── van.jpg                # Vehicle photo (front)
 ├── van_1.jpg              # Vehicle photo (side)
 ├── README.md              # This file
@@ -92,8 +92,8 @@ Access at: https://aoniton.github.io/Skyline-Transport/
 Update Contact Information
 Search and replace these values in index.html:
 
-Phone: +385953763759
-Email: davidkozar01@gmail.com
+Phone: +38595376xxxx
+Email: adresa@gmail.com
 
 Change Colors
 Edit the CSS variables in the <style> section:
@@ -164,15 +164,15 @@ Languages: Croatian (current), expandable to English/German
 
 
 📞 Contact
-Skyline Transport
+Transportna Firma
 
-📱 Phone: +385 95 376 3759
-📧 Email: davidkozar01@gmail.com
+📱 Phone: +385 95 376 xxxx
+📧 Email: adresa@gmail.com
 🌐 Website: https://aoniton.github.io/Skyline-Transport/
 
 
 📝 License
-This project is for Skyline Transport. All rights reserved.
+This project is for Transportna Firma. All rights reserved.
 
 🤝 Contributing
 This is a client project. For questions or support, please contact the repository owner.

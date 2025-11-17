@@ -1,7 +1,7 @@
-# Skyline Transport - Premium Website Documentation
+# Transportna Firma - Premium Website Documentation
 
 ## 🎯 Overview
-This is a professional, conversion-optimized website for Skyline Transport, built based on extensive research of the best-performing transportation and logistics websites in 2024/2025.
+This is a professional, conversion-optimized website for Transportna Firma, built based on extensive research of the best-performing transportation and logistics websites in 2024/2025.
 
 ## ✨ Key Features Implemented
 
@@ -140,7 +140,7 @@ All elements scale appropriately and touch targets are properly sized.
 
 1. **Upload Files:**
    - Upload `skyline-transport-premium.html` to your hosting
-   - Upload `Logo.jpg`, `van_1.jpg`, `van.jpg` to the same directory
+   - Upload `transportna-firma-logo.png`, `van_1.jpg`, `van.jpg` to the same directory
    - Rename the HTML file to `index.html`
 
 2. **Recommended Hosts:**
@@ -149,9 +149,9 @@ All elements scale appropriately and touch targets are properly sized.
    - **SiteGround** (€3.99/month) - Fast, excellent support
 
 3. **Domain Recommendation:**
-   - `skylinetransport.hr` (ideal for Croatian market)
-   - `skylinetransport.eu` (for EU-wide branding)
-   - `skylinetransport.com` (international alternative)
+   - `transportnafirma.hr` (ideal for Croatian market)
+   - `transportnafirma.eu` (for EU-wide branding)
+   - `transportnafirma.com` (international alternative)
 
 ### Option 2: Free Hosting (for testing)
 
@@ -185,8 +185,8 @@ Look for `:root` CSS variables at the top of the `<style>` section:
 
 ### To Update Contact Info:
 Search for:
-- `+385953763759` (phone number)
-- `davidkozar01@gmail.com` (email)
+- `+38595376xxxx` (phone number)
+- `adresa@gmail.com` (email)
 
 Replace all instances throughout the file.
 
@@ -217,9 +217,9 @@ Copy a `.service-card` div and modify:
 ### 2. Additional Improvements:
 ```html
 <!-- Add these in the <head> section -->
-<meta property="og:title" content="Skyline Transport - Brz Prijevoz Diljem EU">
+<meta property="og:title" content="Transportna Firma - Brz Prijevoz Diljem EU">
 <meta property="og:description" content="Profesionalni transport 0.90€/km">
-<meta property="og:image" content="Logo.jpg">
+<meta property="og:image" content="transportna-firma-logo.png">
 <link rel="canonical" href="https://yourwebsite.com">
 ```
 
@@ -329,7 +329,7 @@ Copy a `.service-card` div and modify:
 
 Add WhatsApp button:
 ```html
-<a href="https://wa.me/385953763759?text=Pozdrav, želio bih informacije o transportu" 
+<a href="https://wa.me/38595376xxxx?text=Pozdrav, želio bih informacije o transportu" 
    class="sticky-btn" 
    style="background: #25D366;">
    💬
@@ -452,6 +452,6 @@ For questions about this website:
 
 ---
 
-**Built with research, care, and attention to detail for Skyline Transport's success! 🚀**
+**Built with research, care, and attention to detail for Transportna Firma's success! 🚀**
 
 *This website incorporates insights from industry leaders like Eurosender, Van Express, AnyVan, and best practices from top logistics website design agencies.*
